@@ -8,6 +8,10 @@ namespace MarsRobot
 {
     class Program
     {
+        /// <summary>
+        /// This console application allows the user to test the functionality freely in a simple way
+        /// without having to create additional test methods
+        /// </summary>
         static void Main()
         {
             Console.Clear();
