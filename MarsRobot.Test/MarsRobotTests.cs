@@ -4,10 +4,15 @@ using MarsRobot;
 
 namespace MarsRobot.Unit.Tests
 {
+    /// <summary>
+    /// Test Class to test the functionality of the robot
+    /// </summary>
     [TestClass]
     public class MarsRobotTests
     {
-
+        /// <summary>
+        /// Tests whether or not the robot starts at the correct position (1,1,North)
+        /// </summary>
         [TestMethod]
         public void MarsRobot_Navigate_InitialPosition()
         {
@@ -19,6 +24,9 @@ namespace MarsRobot.Unit.Tests
             Assert.AreEqual(robot.CurrentPosition.Direction, MarsRobot.FacingDirection.North);
         }
 
+        /// <summary>
+        /// Tests wether or not the robot can follow the commands to navigate between the limits of the defined plateau
+        /// </summary>
         [TestMethod]
         public void MarsRobot_Navigate_WithinLimits()
         {
@@ -30,6 +38,10 @@ namespace MarsRobot.Unit.Tests
             Assert.AreEqual(robot.CurrentPosition.Coordinates.Y, 3);
         }
 
+        /// <summary>
+        /// Tests whether or not the robot handles correctly when the user input send it to a position 
+        /// with is outside the boundaries
+        /// </summary>
         [TestMethod]
         public void MarsRobot_Navigate_OffLimits()
         {
@@ -48,6 +60,11 @@ namespace MarsRobot.Unit.Tests
             Assert.AreEqual(robot.CurrentPosition.Coordinates.Y, 1);
         }
 
+        /// <summary>
+        /// Tests whether or not the robot is capable of moving to the limit of the plateau
+        /// This is important to make sure it's not being confused by the fact the Zero position is not affected
+        /// and it can navigate correctly to the limit without getting confused that it has maybe passed the limit
+        /// </summary>
         [TestMethod]
         public void MarsRobot_Navigate_ToTheLimits()
         {
