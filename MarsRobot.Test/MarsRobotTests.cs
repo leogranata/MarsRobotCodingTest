@@ -40,7 +40,7 @@ namespace MarsRobot.Unit.Tests
 
         /// <summary>
         /// Tests whether or not the robot handles correctly when the user input send it to a position 
-        /// with is outside the boundaries
+        /// which is outside the boundaries
         /// </summary>
         [TestMethod]
         public void MarsRobot_Navigate_OffLimits()
